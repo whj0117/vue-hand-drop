@@ -1,0 +1,27 @@
+//筛选器弹窗样式
+#dragFrame {
+  .fixed {
+    z-index: 1000;
+    position: fixed;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &.iconStyle{
+      width: 100%;
+      height: 100%;
+      background-color: rgb(223,228,245);
+      &.leftBorderRadius{
+        border-radius: 0 10px 10px 0;
+      }
+      &.rightBorderRadius{
+        border-radius: 10px 0 0 10px;
+      }
+    }
+
+    &.touchradius {
+      background-image: url("~@assets/images/touchradius.png");
+      //background-size: contain !important;
+    }
+  }
+}
