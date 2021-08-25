@@ -5,6 +5,7 @@
          @mousedown.stop="mousedown($event)" @touchstart.stop="mousedown($event)" @mouseup.stop="mouseup($event)"
          @touchend.stop="mouseup($event)"
          :style="{width:config.dragWidth+'px',height:config.dragHeight+'px',opacity:config.dragOpacity,left:config.dragLeft + 'px',top:config.dragTop + 'px',transition:bool?'all .3s':'',cursor:radiusImg ?'pointer':'move'}">
+
       <slot name="content">
         <!--        <div style="width: 50px;height: 50px;background-color: #f60">-->
 
