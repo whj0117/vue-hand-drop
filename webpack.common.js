@@ -1,6 +1,7 @@
 const path = require("path")
 const VueWebpackPlugin = require('vue-loader/lib/plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 function resolve(name){
     return path.resolve(__dirname,name)
@@ -29,6 +30,11 @@ module.exports = {
         ]
     },
     plugins:[
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'index.html',
+            favicon:'./v_favicon.ico'
+        }),
         new CleanWebpackPlugin(),
         new VueWebpackPlugin()
     ],

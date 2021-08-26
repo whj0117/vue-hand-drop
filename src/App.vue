@@ -2,7 +2,7 @@
   <div id="app">
     <div class="wrap">
       <div class="box">
-        <handDrop @changeBack="changeBack">
+        <handDrop :options="{dragWidth:100,dragHeight:200}" @changeBack="changeBack">
           <template v-slot:content>
           </template>
         </handDrop>
@@ -44,7 +44,7 @@ body, html {
     overflow-y: auto;
     width: 500px;
     height: 300px;
-    margin: 50px auto;
+    margin: 0 auto;
     background-color: #09c;
 
     .box {

@@ -5,12 +5,9 @@
          @mousedown.stop="mousedown($event)" @touchstart.stop="mousedown($event)" @mouseup.stop="mouseup($event)"
          @touchend.stop="mouseup($event)"
          :style="{width:config.dragWidth+'px',height:config.dragHeight+'px',opacity:config.dragOpacity,left:config.dragLeft + 'px',top:config.dragTop + 'px',transition:bool?'all .3s':'',cursor:radiusImg ?'pointer':'move'}">
-
       <slot name="content">
-        <!--        <div style="width: 50px;height: 50px;background-color: #f60">-->
-
-        <!--        </div>-->
-        <img src="@assets/images/touchradius.png" alt="">
+        <div style="width: 50px;height: 50px;background-color: #f60"></div>
+        <!--        <img src="@assets/images/touchradius.png" alt="">-->
       </slot>
     </div>
   </div>
@@ -85,10 +82,16 @@ export default {
     }
   },
   mounted() {
+    this.setConfig();
     window.addEventListener('resize', this.handleResize, true);
     this.getDom();
   },
   methods: {
+    setConfig(){
+      let options = this.options,
+          config = this.config;
+      if(options && Object.keys(options).length) this.config = {...config,...options}
+    },
     handleResize() {
       this.getDom();
     },
@@ -123,8 +126,21 @@ export default {
       this.nowClientY = null;
       var that = this;
       var event = e || window.event;
+      // console.log(that.$refs['fixedFrame'].clientX)
       var _target = event.target;
       var isParent = _target.className.indexOf('fixed iconStyle') > -1 //说明是点击拖拽最外面
+      var ele = document.querySelector('.fixed')
+      console.log(ele);
+      // if(!isParent){
+      //   var ele = document.querySelector('.fixed')
+      //   console.log(ele);
+      //   ele.onmouseup = function (ev){
+      //     event = ev || window.event
+      //     console.log(">>>>>>>>>>",event)
+      //   }
+      // }
+
+
       var startx = that.nowClientX = event.clientX;
       var starty = that.nowClientY = event.clientY;
       var sb_bkx = startx - event.target.offsetLeft;
@@ -134,7 +150,7 @@ export default {
       that.hasMove = true;
       that.bool = false;
       document.onmousemove = function (ev) {
-        console.log('拖动了');
+        // console.log('拖动了');
         var event = ev || window.event;
         var config = that.config;
         //判断是点击还是移动
@@ -146,7 +162,7 @@ export default {
 
         var endx = event.clientX - sb_bkx;
         var endy = event.clientY - sb_bky;
-        console.log(endy)
+        // console.log(endy)
         _target.style.left = endx + 'px'
         _target.style.top = endy + 'px'
         //如果超过父元素最右边，元素贴附在最右边
@@ -203,7 +219,7 @@ export default {
   watch: {
     options: {
       handler(n, o) {
-
+        this.setConfig()
       },
       deep: true
     }

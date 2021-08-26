@@ -1,7 +1,6 @@
 const {merge} = require('webpack-merge')
 const common = require('./webpack.common')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 function resolve(name) {
     return path.join(__dirname, name)
@@ -26,9 +25,6 @@ module.exports = merge(common, {
         libraryTarget: 'umd'
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'index.html'
-        })
+
     ]
 })
