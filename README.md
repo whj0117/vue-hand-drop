@@ -29,31 +29,31 @@ components{vueHandDrop};
 {   
     /**
      * @description 拖拽按钮的宽度
-     * @type {Number|String}
+     * @type {Number<String>}
      * @default 50
      */
     dragWidth: 50,
     /**
      * @description 拖拽按钮的高度
-     * @type {Number|String}
+     * @type {Number<String>}
      * @default 40
      */
     dragHeight: 40,
     /**
      * @description 拖拽按钮的透明度
-     * @type {Number|String}
+     * @type {Number<String>}
      * @default 1
      */
     dragOpacity: 1,
     /**
      * @description 拖拽按钮的left值
-     * @type {Number|String}
+     * @type {Number<String>}
      * @default 0
      */
     dragLeft: 0,
     /**
      * @description 拖拽按钮的top值
-     * @type {Number|String}
+     * @type {Number<String>}
      * @default 50
      */
     dragTop: 50
