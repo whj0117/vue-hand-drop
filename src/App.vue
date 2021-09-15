@@ -3,7 +3,6 @@
     <div class="wrap">
       <div class="box">
         <handDrop
-            :options="{ dragWidth: 100, dragHeight: 200 }"
             @upDrag="upDrag"
             @moveDrag="upDrag"
           >
