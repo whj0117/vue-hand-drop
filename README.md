@@ -1,5 +1,5 @@
-# vue-hand-drop（未完结）
-这是一个类似于微信视频小窗口拖拽吸附功能，具有左右方向识别并且现在整体吸附轮廓，能够自定义大小和背景图片
+# vue-hand-drop
+这是一个小窗口拖拽吸附功能，按照微信视频小窗口模式模仿的组件，拖拽结束后根据当前位置和父元素大小来计算吸附方向，整体样式开放给开发者，根据插槽自定义样式，通过配置项能够配置拖拽组件的宽、高、left、top位置和透明度。
 
 ## 安装
 ```
@@ -28,34 +28,34 @@ components{vueHandDrop};
 ```
 {   
     /**
-     * @description 拖拽按钮的宽度
-     * @type {Number<String>}
-     * @default 50
-     */
+        * @description 拖拽按钮的宽度
+        * @type {Number<String>}
+        * @default 50
+        */
     dragWidth: 50,
     /**
-     * @description 拖拽按钮的高度
-     * @type {Number<String>}
-     * @default 40
-     */
+        * @description 拖拽按钮的高度
+        * @type {Number<String>}
+        * @default 40
+        */
     dragHeight: 40,
     /**
-     * @description 拖拽按钮的透明度
-     * @type {Number<String>}
-     * @default 1
-     */
+        * @description 拖拽按钮的透明度
+        * @type {Number<String>}
+        * @default 1
+        */
     dragOpacity: 1,
     /**
-     * @description 拖拽按钮的left值
-     * @type {Number<String>}
-     * @default 0
-     */
+        * @description 拖拽按钮的left值,鼠标抬起还是会根据父级定位
+        * @type {Number<String>}
+        * @default 0
+        */
     dragLeft: 0,
     /**
-     * @description 拖拽按钮的top值
-     * @type {Number<String>}
-     * @default 50
-     */
-    dragTop: 50
+        * @description 拖拽按钮的top值
+        * @type {Number<String>}
+        * @default 0
+        */
+    dragTop: 0
 }
 ```

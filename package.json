@@ -4,7 +4,7 @@
   "description": "这是一个类似于微信视频小窗口拖拽吸附功能，具有左右方向识别并且现在整体吸附轮廓，能够自定义大小和背景图片",
   "main": "lib/js/vueHandDrop.js",
   "scripts": {
-    "dev": "webpack serve --config webpack.dev.js",
+    "serve": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {

@@ -2,62 +2,51 @@
   <div id="app">
     <div class="wrap">
       <div class="box">
-        <handDrop>
-          <div class="dom">
-            <div class="dom1"></div>
-          </div>
-        </handDrop>
+        <handDrop
+            :options="{ dragWidth: 100, dragHeight: 200 }"
+            @upDrag="upDrag"
+            @moveDrag="upDrag"
+          >
+            <div style="width:50px;height:50px;background:#f60"></div>
+          </handDrop>
       </div>
     </div>
   </div>
 </template>
 <script>
-import handDrop from './component/lib/main.vue'
-
+import handDrop from "./component/lib/main.vue";
 export default {
   components: {
-    handDrop
+    handDrop,
   },
-  methods:{
-    changeBack(bool){
-      // alert(bool)
-    }
-  }
-}
+  methods: {
+    upDrag(obj) {
+      console.log(obj)
+    },
+  },
+};
 </script>
 <style lang="scss">
-.dom{
-  width: 100px;
-  height: 100px;
-  background-color: #f60;
-}
-.dom1{
-  width: 50px;
-  height: 50px;
-  background-color: #f66;
-}
 * {
   margin: 0;
   padding: 0;
 }
-
-body, html {
+body,
+html {
   width: 100%;
   height: 100%;
 }
-
 #app {
   overflow: hidden;
   width: 100%;
   height: 100%;
-
   .wrap {
-    overflow-y: auto;
-    width: 500px;
-    height: 300px;
+    position: relative;
+    // overflow-y: auto;
+    width: 1000px;
+    // height: 300px;
     margin: 0 auto;
     background-color: #09c;
-
     .box {
       height: 500px;
     }
