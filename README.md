@@ -21,7 +21,9 @@ import vueHandDrop from 'vue-hand-drop'
 components{vueHandDrop};
 
 组件位置
-<vue-hand-drop :options="{}" />
+<vue-hand-drop :options="{}">
+    <div>自定义样式</div>
+</vue-hand-drop>
 ```
 
 ## 配置
