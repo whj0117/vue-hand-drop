@@ -29,15 +29,15 @@ export default {
         /**
          * @description 拖拽按钮的宽度
          * @type {Number<String>}
-         * @default 50
+         * @default 100
          */
-        dragWidth: 50,
+        dragWidth: 100,
         /**
          * @description 拖拽按钮的高度
          * @type {Number<String>}
-         * @default 40
+         * @default 100
          */
-        dragHeight: 40,
+        dragHeight: 100,
         /**
          * @description 拖拽按钮的透明度
          * @type {Number<String>}
