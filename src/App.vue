@@ -2,9 +2,10 @@
   <div id="app">
     <div class="wrap">
       <div class="box">
-        <handDrop :options="{dragWidth:100,dragHeight:200}" @changeBack="changeBack">
-          <template v-slot:content>
-          </template>
+        <handDrop>
+          <div class="dom">
+            <div class="dom1"></div>
+          </div>
         </handDrop>
       </div>
     </div>
@@ -25,6 +26,16 @@ export default {
 }
 </script>
 <style lang="scss">
+.dom{
+  width: 100px;
+  height: 100px;
+  background-color: #f60;
+}
+.dom1{
+  width: 50px;
+  height: 50px;
+  background-color: #f66;
+}
 * {
   margin: 0;
   padding: 0;
