@@ -30,34 +30,40 @@ components{vueHandDrop};
 ```
 {   
     /**
-        * @description 拖拽按钮的宽度
-        * @type {Number<String>}
-        * @default 100
-        */
+    * @description 拖拽按钮的宽度
+    * @type {Number<String>}
+    * @default 100
+    */
     dragWidth: 100,
     /**
-        * @description 拖拽按钮的高度
-        * @type {Number<String>}
-        * @default 100
-        */
+    * @description 拖拽按钮的高度
+    * @type {Number<String>}
+    * @default 100
+    */
     dragHeight: 100,
     /**
-        * @description 拖拽按钮的透明度
-        * @type {Number<String>}
-        * @default 1
-        */
+    * @description 拖拽按钮的透明度
+    * @type {Number<String>}
+    * @default 1
+    */
     dragOpacity: 1,
     /**
-        * @description 拖拽按钮的left值,鼠标抬起还是会根据父级定位
-        * @type {Number<String>}
-        * @default 0
-        */
+    * @description 拖拽按钮的left值,鼠标抬起还是会根据父级定位
+    * @type {Number<String>}
+    * @default 0
+    */
     dragLeft: 0,
     /**
-        * @description 拖拽按钮的top值
-        * @type {Number<String>}
-        * @default 0
-        */
-    dragTop: 0
+    * @description 拖拽按钮的top值
+    * @type {Number<String>}
+    * @default 0
+    */
+    dragTop: 0,
+    /**
+    * @description 执行动画时间，单位毫秒
+    * @type {Number<String>}
+    * @default 300
+    */
+    animationTime:300
 }
 ```

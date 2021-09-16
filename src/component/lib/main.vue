@@ -3,16 +3,14 @@
     :id="'drag' + timeStamp"
     class="fixed"
     ref="fixedFrame"
-    :class="[
-      { transitionClass: transitionClassBool },
-      isLeft ? 'leftBorderRadius' : 'rightBorderRadius',
-    ]"
+    :class="[isLeft ? 'leftBorderRadius' : 'rightBorderRadius']"
     :style="{
       width: config.dragWidth + 'px',
       height: config.dragHeight + 'px',
       opacity: config.dragOpacity,
       left: config.dragLeft + 'px',
-      top: config.dragTop + 'px'
+      top: config.dragTop + 'px',
+      transition: transitionClassBool ? `left ${config.animationTime}ms` : ''
     }"
   >
     <slot></slot>
@@ -55,7 +53,13 @@ export default {
          * @type {Number<String>}
          * @default 0
          */
-        dragTop: 0
+        dragTop: 0,
+        /**
+         * @description 执行动画时间，单位毫秒
+         * @type {Number<String>}
+         * @default 300
+         */
+        animationTime:300
       },
       //父元素left
       parentElementLeft: null,
@@ -73,6 +77,7 @@ export default {
       app: null,
       // 添加过度class
       transitionClassBool: false,
+      dsq:null,
     };
   },
   props: {
@@ -85,15 +90,16 @@ export default {
     window.addEventListener("resize", this.getDom, true);
     this.setConfig();//合并传参和props
     this.getDom();//根据父元素获取位置
-    this.setFun();//拖拽的功能
+    this.app = document.getElementById("drag" + this.timeStamp);
+    this.app.addEventListener("mousedown", this.setFun, false);
   },
   methods: {
     setFun() {
-      this.app = document.getElementById("drag" + this.timeStamp);
-      const box = this.app;
+      var box = this.app;
       app.onmousedown = (ev) => {
+        this.transitionClassBool = false;
+        this.dsq && clearTimeout(this.dsq)
         var oEvent = ev || window.event;
-        console.log(oEvent)
         //求出鼠标和box的位置差值
         var x = oEvent.clientX - box.offsetLeft;
         var y = oEvent.clientY - box.offsetTop;
@@ -144,12 +150,15 @@ export default {
         };
         //鼠标抬起的函数
         document.onmouseup = (ev) => {
+          app.onmousedown = null;
           document.onmousemove = null;
           document.onmouseup = null;
           this.transitionClassBool = true;
-          setTimeout(() => {
+          var animationTime = parseInt(this.config.animationTime)
+          console.log(animationTime)
+          this.dsq = setTimeout(() => {
             this.transitionClassBool = false;
-          }, 500);
+          }, animationTime);
           if (
             parseInt(box.style.left) >
             this.parentElementLeft +
