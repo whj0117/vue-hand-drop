@@ -1,4 +1,4 @@
-<img src="./src/assets/images/demo.gif"/>
+<img src="./src/assets/images/demo.gif" alt="项目演示gif图"/>
 # vue-hand-drop
 这是一个小窗口拖拽吸附功能，按照微信视频小窗口模式模仿的组件，拖拽结束后根据当前位置和父元素大小来计算吸附方向，整体样式开放给开发者，根据插槽自定义样式，通过配置项能够配置拖拽组件的宽、高、left、top位置和透明度。
 
