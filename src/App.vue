@@ -8,6 +8,13 @@
           >
             <div style="width:50px;height:50px;background:#f60"></div>
           </handDrop>
+          <handDrop
+            @upDrag="upDrag"
+            @moveDrag="upDrag"
+            :options={dragTop:160}
+          >
+            <div style="width:80px;height:80px;background:#f66"></div>
+          </handDrop>
       </div>
     </div>
   </div>
