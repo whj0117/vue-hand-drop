@@ -23,8 +23,5 @@ module.exports = merge(common, {
         filename: 'index.js',
         library: 'index.js',
         libraryTarget: 'umd'
-    },
-    plugins: [
-
-    ]
+    }
 })
