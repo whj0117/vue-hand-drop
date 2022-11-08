@@ -155,7 +155,7 @@ export default {
           document.onmouseup = null;
           this.transitionClassBool = true;
           var animationTime = parseInt(this.config.animationTime)
-          console.log(animationTime)
+          // console.log(animationTime)
           this.dsq = setTimeout(() => {
             this.transitionClassBool = false;
           }, animationTime);

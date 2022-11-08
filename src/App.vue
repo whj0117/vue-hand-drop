@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Author: wanghongjian
+ * @github: https://github.com/whj0117
+ * @Date: 2022-11-08 09:58:10
+ * @LastEditTime: 2022-11-08 10:17:36
+ * @LastEditors:  
+-->
 <template>
   <div id="app">
     <div class="wrap">
@@ -27,7 +35,7 @@ export default {
   },
   methods: {
     upDrag(obj) {
-      console.log(obj)
+      // console.log(obj)
     },
   },
 };
