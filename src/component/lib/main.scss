@@ -5,6 +5,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-color: rgb(223,228,245);
+  cursor: move;
 
   &.transitionClass{
     transition: left .3s;
